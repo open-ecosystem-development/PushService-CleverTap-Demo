@@ -30,11 +30,6 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         resConfigs "en", "zh-rCN"
-//        manifestPlaceholders = [  // put your own Onesignal app id here
-//                                  onesignal_app_id: "xxxx-xxxx-xxxx-xxxx-xxxxx",
-//                                  // Project number pulled from dashboard, local value is ignored.
-//                                  onesignal_google_project_number: 'REMOTE'
-//        ]
     }
 
     signingConfigs {  //Please replace with your own signature credential

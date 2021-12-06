@@ -18,8 +18,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
-//import com.clevertap.android.sdk.Utils;
-//import com.huawei.hms.framework.common.Utils;
+
 import com.clevertap.android.sdk.CleverTapAPI;
 import com.clevertap.android.sdk.Utils;
 import com.huawei.hms.push.HmsMessageService;

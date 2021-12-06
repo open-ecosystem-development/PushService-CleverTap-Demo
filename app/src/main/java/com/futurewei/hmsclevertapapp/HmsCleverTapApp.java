@@ -17,7 +17,6 @@ import com.clevertap.android.sdk.Application;
 
 public class HmsCleverTapApp extends Application {
 
-    private static final String TAG = "HmsCleverTapApp";
 
     @Override
     public void onCreate() {
