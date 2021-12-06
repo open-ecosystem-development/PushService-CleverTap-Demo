@@ -52,12 +52,12 @@
 <!--   fill these with data from CleverTap dashboard>setting>Project>projectID-->
         <meta-data
             android:name="CLEVERTAP_ACCOUNT_ID"
-            android:value="TEST-K9Z-46W-995Z"/>
+            android:value="xxxx-xxx-xxx-xxxx"/>
 
 <!--   fill these with data from CleverTap dashboard>setting>Project>project token-->
         <meta-data
             android:name="CLEVERTAP_TOKEN"
-            android:value="TEST-064-1c3"/>
+            android:value="xxxx-xxxx-xxxx"/>
 
     </application>
 </manifest>
