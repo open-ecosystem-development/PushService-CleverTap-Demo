@@ -33,6 +33,7 @@ as of this post only the data messaging e.g. In-App is supported
   
 
 ## Sending PUSH message 
+  - Currently only In-App is support
   - Run and test your app on Huawei device. 
   - Go to CleverTap Dashboard and create a campaign to test it.
   - Your device should receive in-App messaging sending from CleverTap dashboard.
