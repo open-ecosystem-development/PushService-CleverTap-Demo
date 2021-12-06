@@ -28,17 +28,17 @@ as of this post only the data messaging e.g. In-App is supported
  **Android app - client side setup**
    - Use this demo code and refactor it with your new package name.
    - Go to Huawei App Gallery Connect, find your project. Go to Project Setting->General Information, in the App information, download agconnect-services.json file      and copy it to your application's root directory [Refer](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/android-integrating-sdk-0000001050040084). 
-   - In your module-level build.gradle file, add your app-id. Configure your signing information and keystore file in the signingConfig.
+   - In your manifest file add your CleverTap account info and token. Configure your signing information and keystore file in the signingConfig.
      Sync gradle.   
-   - Go to CleverTap Dashboard and create a campaign to test it.
-   - Run and test your app on Huawei device. 
-    
-     Make sure your device is subscribed to get notifications  and can receive notifications sent from the OneSignal dashboard.
-   - Manage your users, messages, audience through OneSignal dashboard.
+  
 
+## Sending PUSH message 
+  - Run and test your app on Huawei device. 
+  - Go to CleverTap Dashboard and create a campaign to test it.
+  - Your device should receive in-App messaging sending from CleverTap dashboard.
+  - You can view the report and manage the campaign through dashboard.
 
-## Sending PUSH message support
-   in-app message, A/B tests, automated message for selected audience by creating segments.
+  - Currently these feature are support in-app message, A/B tests, automated message for selected audience by creating segments.
 
 ## License
 This sample code for android is licensed under the [Apache License, version 2.0.](http://www.apache.org/licenses/LICENSE-2.0)
