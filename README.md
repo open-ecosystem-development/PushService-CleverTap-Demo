@@ -23,7 +23,7 @@ as of this post only the data messaging e.g. In-App is supported
    
  **CleverTap setup**
    - Request your account from here [demo](https://clevertap.com/live-product-demo/)
-   - Configure your OneSignal App's Huawei platform settings [Refer](https://eu1.dashboard.clevertap.com/K9Z-46W-995Z/account-setup/campaigns-journeys/channels/mobile-push/android).
+   - Configure your CleverTap App's Huawei platform settings [Refer](https://eu1.dashboard.clevertap.com/K9Z-46W-995Z/account-setup/campaigns-journeys/channels/mobile-push/android).
    
  **Android app - client side setup**
    - Use this demo code and refactor it with your new package name.
