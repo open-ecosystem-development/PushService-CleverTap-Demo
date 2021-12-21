@@ -10,7 +10,10 @@
       See the License for the specific language governing permissions and
       limitations under the License.
 */
-
+/*    CleverTap contribution
+      Darshan Pania <darshan@clevertap.com>
+      Darshan Pania piyush.kukadiya@clevertap.com 
+*/
 
 package com.futurewei.hmsclevertapapp;
 
