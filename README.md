@@ -48,3 +48,9 @@ This sample code for android is licensed under the [Apache License, version 2.0.
 If you have a question 
 - [Stack Overflow](https://stackoverflow.com/questions/tagged/huawei-mobile-services) is the best place for any programming questions. 
   Be sure to tag your question with `huawei-mobile-services`.
+  
+ ## Acknowledgement
+ Thank for code contribution from CleverTap specifically
+ Darshan Pania <darshan@clevertap.com>
+ Darshan Pania piyush.kukadiya@clevertap.com 
+
