@@ -23,7 +23,8 @@ This app demonstrates integration of CleverTap Push service through Huawei Push 
    
  **CleverTap setup**
    - Request your account from here [demo](https://clevertap.com/live-product-demo/)
-   - Configure your CleverTap App's Huawei platform settings [Refer](https://eu1.dashboard.clevertap.com/K9Z-46W-995Z/account-setup/campaigns-journeys/channels/mobile-push/android).
+   - Configure your CleverTap App's Huawei platform settings [Refer](https://developer.clevertap.com/docs/clevertap-huawei-push-integration#section-integrate-huawei-hms-sdk). Github Integration Document:[Refer](https://developer.clevertap.com/docs/clevertap-huawei-push-integration#section-integrate-huawei-hms-sdk)
+   - ChangeLog:[Refer](https://github.com/CleverTap/clevertap-android-sdk/blob/master/docs/CTHUAWEIPUSHCHANGELOG.md)
    
  **Android app - client side setup**
    - Use this demo code and refactor it with your new package name.
