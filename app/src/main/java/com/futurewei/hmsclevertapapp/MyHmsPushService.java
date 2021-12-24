@@ -11,8 +11,8 @@
       limitations under the License.
 */
 /*    CleverTap contribution
-      Darshan Pania <darshan@clevertap.com>
-      Darshan Pania piyush.kukadiya@clevertap.com 
+      Darshan Pania darshan@clevertap.com
+      Piyush Kukadiya piyush.kukadiya@clevertap.com
 */
 
 package com.futurewei.hmsclevertapapp;
