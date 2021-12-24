@@ -12,9 +12,8 @@
  
 
 ## Introduction
-Sample code for integration between Hms push kit and CleverTap
-as of this post only the data messaging e.g. In-App is supported
 
+This app demonstrates integration of CleverTap Push service through Huawei Push messaging service.
 ## Getting Started
 
  **Huawei - App Gallery Connect setup**
