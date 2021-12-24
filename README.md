@@ -8,6 +8,7 @@
  * [Sending PUSH message](#sending-push-message)
  * [License](#license) 
  * [Question](#question) 
+ * [Acknoledgement](#acknowledgement)
  
 
 ## Introduction
@@ -54,5 +55,5 @@ If you have a question
  
  Darshan Pania <darshan@clevertap.com>
  
- Darshan Pania piyush.kukadiya@clevertap.com 
+ Piyush Kukadiya piyush.kukadiya@clevertap.com 
 
