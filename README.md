@@ -45,11 +45,19 @@ This app demonstrates integration of CleverTap Push service through Huawei Push 
   - Currently In-App is support with HMS (Huawei device)
   - Notification is support using FCM (GMS device)
   - Run and test your app on Huawei device and GMS device
-  - Go to CleverTap Dashboard and create a campaign to test it.
+  - Go to CleverTap dashboard and create a campaign to test:
+   - notification:
+     - On settings gear>Channels>Mobile Push> enable notification channels for Android 8+ and above
+         - add your channel name that you have created in your app using CleverTapAPI.createNotificationChannel function 
+         - one for each channel that created
+   - To test In-app: 
+     - Create a campaign to test it.
+  - Your device should receive notification messaging sending from CleverTap dashboard.
   - Your device should receive in-App messaging sending from CleverTap dashboard.
-  - You can view the report and manage the campaign through dashboard.
-
-  - Currently these feature are support in-app message, A/B tests, automated message for selected audience by creating segments.
+  - You can view the report and manage the campaign through the dashboard.
+  - Currently these feature are support:
+    - in-app message, A/B tests, automated message for selected audience by creating segments.
+    - notification via FCM
 
 ## License
 This sample code for android is licensed under the [Apache License, version 2.0.](http://www.apache.org/licenses/LICENSE-2.0)
