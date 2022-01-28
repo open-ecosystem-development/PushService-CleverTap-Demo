@@ -31,7 +31,7 @@ This app demonstrates integration of CleverTap Push service through Huawei Push 
    - Follow their instruction to create project.
    - From project overview page click on the gear icon to go setting page
    - In the setting page 
-      - download the google-services.json file and copy it to your project app folder
+      - download the google-services.json file and copy it to your project app folder [Refer](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/android-integrating-sdk-0000001050040084). 
       - click on cloud messaging tab to copy the server key and senderID info to be fill in Clevertap setting page
    
  **Android app - client side setup**
