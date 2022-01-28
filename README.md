@@ -19,20 +19,20 @@ This app demonstrates integration of CleverTap Push service through Huawei Push 
  **Huawei - App Gallery Connect setup**
    - Create Huawei developer account, if you don't have one [from here](https://developer.huawei.com/consumer/en/). 
    - Create new project and app in App Gallery Connect [here](https://developer.huawei.com/consumer/en/service/josp/agc/index.html#/)
-   -  then download the 'agconnect-services.json' file [here](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/android-integrating-sdk-0000001050040084).   
+   -  then download the 'agconnect-services.json' file from project and copy it to your application's [root directory](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/android-integrating-sdk-0000001050040084). 
    - Enable Huawei Push kit service in your app from Huawei App Gallery Connect [here](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/android-config-agc-0000001050170137).
    
 **Firebase Cloud Messaging setup**
    - Create firebase account, if you don't have one [from here](https://firebase.google.com/). 
    - Follow their instruction to create project.
-   - From project overview page click on the gear icon to go setting page
+   - From project overview page click on the gear icon to go to setting page
    - In the setting page 
       - download the 'google-services.json' file and copy it to your project [root directory](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/android-integrating-sdk-0000001050040084). 
       - click on cloud messaging tab to copy the 'server key' and 'senderID' info to be fill in Clevertap setting page
       
  **CleverTap setup**
    - Request your account [from here](https://clevertap.com/live-product-demo/)
-   - Configure your CleverTap App's Huawei platform settings [here](https://developer.clevertap.com/docs/clevertap-huawei-push-integration#section-integrate-huawei-hms-sdk). Github Integration Document:[here](https://developer.clevertap.com/docs/clevertap-huawei-push-integration#section-integrate-huawei-hms-sdk)
+   - Configure your CleverTap App's for Huawei platform settings [here](https://developer.clevertap.com/docs/clevertap-huawei-push-integration#section-integrate-huawei-hms-sdk). Github Integration Document:[here](https://developer.clevertap.com/docs/clevertap-huawei-push-integration#section-integrate-huawei-hms-sdk)
    - Configuring for Firebase Cloud Messaging
      - On settings gear>Channels>Mobile Push> enable notification channels for Android 8+ and above
          - add your channel name that you have created in your app using CleverTapAPI.createNotificationChannel function 
