@@ -31,7 +31,7 @@ This app demonstrates integration of CleverTap Push service through Huawei Push 
    - Follow their instruction to create project.
    - From project overview page click on the gear icon to go setting page
    - In the setting page 
-      - download the google-services.json file and copy it to your project app folder [Refer](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/android-integrating-sdk-0000001050040084). 
+      - download the google-services.json file and copy it to your project root directory [Refer](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/android-integrating-sdk-0000001050040084). 
       - click on cloud messaging tab to copy the server key and senderID info to be fill in Clevertap setting page
    
  **Android app - client side setup**
@@ -42,8 +42,9 @@ This app demonstrates integration of CleverTap Push service through Huawei Push 
   
 
 ## Sending PUSH message 
-  - Currently only In-App is support
-  - Run and test your app on Huawei device. 
+  - Currently In-App is support with HMS (Huawei device)
+  - Notification is support using FCM (GMS device)
+  - Run and test your app on Huawei device and GMS device
   - Go to CleverTap Dashboard and create a campaign to test it.
   - Your device should receive in-App messaging sending from CleverTap dashboard.
   - You can view the report and manage the campaign through dashboard.
