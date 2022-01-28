@@ -17,25 +17,18 @@
 */
 package com.futurewei.hmsclevertapapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
 import android.app.NotificationManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
-import com.clevertap.android.sdk.Application;
-import com.clevertap.android.sdk.CTInboxStyleConfig;
+import androidx.appcompat.app.AppCompatActivity;
 import com.clevertap.android.sdk.CleverTapAPI;
-import com.clevertap.android.sdk.pushnotification.PushConstants;
-import com.huawei.agconnect.config.AGConnectServicesConfig;
+import com.google.firebase.messaging.FirebaseMessaging;
+import com.huawei.agconnect.AGConnectOptionsBuilder;
 import com.huawei.hms.aaid.HmsInstanceId;
-import com.huawei.hms.api.HuaweiApiAvailability;
-import com.huawei.hms.common.ApiException;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Objects;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,31 +40,59 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
        CleverTapAPI CTInstance = CleverTapAPI.getDefaultInstance(getApplicationContext());
-        CleverTapAPI.createNotificationChannel(getApplicationContext(),
-                "huawei","huawei",
-                "testing hms to clevertap",
-                NotificationManager.IMPORTANCE_MAX,true);
-        assert CTInstance != null;
-        CTInstance.pushEvent("Huawei Event");
+       assert CTInstance != null;
+       // Create FCM notification channel
+       CleverTapAPI.createNotificationChannel(getApplicationContext(),
+                "FCM","FCM",
+                "testing get fcm message from clevertap",
+                 NotificationManager.IMPORTANCE_MAX,true);
 
-        sync_getToken();
+        // Create HMS notification channel
+       CleverTapAPI.createNotificationChannel(getApplicationContext(),
+                "huawei","huawei",
+                "testing get HMS message from clevertap",
+                NotificationManager.IMPORTANCE_MAX,true);
+
+       CTInstance.pushEvent("FCM-HMS Event");
+
+       FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(task -> {
+                    if (!task.isSuccessful()) {
+                        Log.w(TAG, "Fetching FCM registered token failed: ", task.getException());
+                        return;
+                    }
+                    // Get new FCM registration token
+                    String token = task.getResult();
+                    Log.d(TAG, "Got registered token: " + token);
+                    Toast.makeText(MainActivity.this, "Got registered token: " + token, Toast.LENGTH_SHORT).show();
+                });
+
+        sync_getHmsToken();
     }
 
-    public void sync_getToken() {
+    public void sync_getHmsToken() {
         new Thread() {
             @Override
             public void run() {
                 try {
-                    String appId = AGConnectServicesConfig.fromContext(MainActivity.this).getString("client/app_id");
-                    String getToken = HmsInstanceId.getInstance(getApplicationContext()).getToken(appId, "HCM");
-                    if (getToken == null || getToken.trim().length() < 1) {
-                        getToken = HmsInstanceId.getInstance(getApplicationContext()).getToken(appId, "HCM");
-                    }
-                    Log.d(TAG, "getToken: " + getToken);
+                        String appId = new AGConnectOptionsBuilder()
+                                .build(MainActivity.this)
+                                .getString("client/app_id");
+                        String getToken = HmsInstanceId
+                                .getInstance(getApplicationContext())
+                                .getToken(appId, "HCM");
+                        if (getToken == null || getToken.trim().length() < 1) {
+                            getToken = HmsInstanceId
+                                    .getInstance(getApplicationContext())
+                                    .getToken(appId, "HCM");
+                        }
+                        Log.d(TAG, "getToken: " + getToken);
 
-                    Objects.requireNonNull(CleverTapAPI.getDefaultInstance(getApplicationContext())).pushHuaweiRegistrationId(getToken,true);
+                        Objects.requireNonNull(CleverTapAPI
+                                .getDefaultInstance(getApplicationContext()))
+                                .pushHuaweiRegistrationId(getToken,true);
                 } catch (Exception e) {
-                    Log.i(TAG, "getToken failed.");
+                    Log.i(TAG, "getToken failed due to: " + e.getMessage());
                 }
             }
         }.start();

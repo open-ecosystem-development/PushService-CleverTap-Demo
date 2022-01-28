@@ -15,7 +15,7 @@
 <!--    
        CleverTap contribution
       Darshan Pania <darshan@clevertap.com>
-      Darshan Pania piyush.kukadiya@clevertap.com 
+      Piyush Kukadiya piyush.kukadiya@clevertap.com
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -26,7 +26,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
-<!--    android:name="com.clevertap.android.sdk.Application">-->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -34,17 +33,55 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HmsCleverTapApp"
-        android:name=".HmsCleverTapApp">
+        android:name="com.clevertap.android.sdk.Application">
 
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+<!--   fill these with data from CleverTap dashboard>setting>Project>projectID-->
+        <meta-data
+            android:name="CLEVERTAP_ACCOUNT_ID"
+            android:value="TEST-798-R76-6K6Z"/>
+
+<!--   fill these with data from CleverTap dashboard>setting>Project>project token-->
+        <meta-data
+            android:name="CLEVERTAP_TOKEN"
+            android:value="TEST-6a2-bca"/>
+
+<!--        for FCM setting-->
+        <meta-data
+            android:name="FCM_SENDER_ID"
+            android:value="631917320390">
+        </meta-data>
+
+        <service
+            android:name="com.clevertap.android.sdk.pushnotification.fcm.FcmMessageListenerService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.clevertap.android.sdk.pushnotification.CTNotificationIntentService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.clevertap.PUSH_EVENT" />
+            </intent-filter>
+        </service>
+
+        <service android:name=".MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
 
         <service
             android:name="com.futurewei.hmsclevertapapp.MyHmsPushService"
@@ -53,16 +90,6 @@
                 <action android:name="com.huawei.push.action.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
-<!--   fill these with data from CleverTap dashboard>setting>Project>projectID-->
-        <meta-data
-            android:name="CLEVERTAP_ACCOUNT_ID"
-            android:value="xxxx-xxx-xxx-xxxx"/>
-
-<!--   fill these with data from CleverTap dashboard>setting>Project>project token-->
-        <meta-data
-            android:name="CLEVERTAP_TOKEN"
-            android:value="xxxx-xxxx-xxxx"/>
 
     </application>
 </manifest>

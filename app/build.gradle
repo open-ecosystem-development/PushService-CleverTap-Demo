@@ -32,7 +32,6 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
         resConfigs "en", "zh-rCN"
     }
 
@@ -49,16 +48,17 @@ android {
 
     buildTypes {
         release {
-
             signingConfig signingConfigs.release
 
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
         debug {
             signingConfig signingConfigs.debug
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -67,22 +67,34 @@ android {
 
 dependencies {
 
-    implementation 'androidx.appcompat:appcompat:1.4.0'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     // clevertap
-    implementation 'com.clevertap.android:clevertap-android-sdk:4.3.0'
+    implementation 'com.clevertap.android:clevertap-android-sdk:4.4.0'
     implementation 'com.android.installreferrer:installreferrer:2.2'
-    implementation 'com.clevertap.android:clevertap-hms-sdk:1.1.0'
+    implementation 'com.clevertap.android:clevertap-hms-sdk:1.2.0'
 
-  //hms
-//    implementation 'com.huawei.agconnect:agconnect-core:1.5.2.300'
+    // for using FCM as push notification instead of HMS
+    // You will also have to add the FCM generated google-services.json file to your project.
+    // and comment out all HMS push relate items
+    implementation 'com.google.firebase:firebase-messaging:23.0.0'
+    implementation 'androidx.core:core:1.7.0'
+    // Import the Firebase BoM
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation platform('com.google.firebase:firebase-bom:29.0.3')
+
+    // HMS push
     implementation 'com.huawei.hms:push:6.1.0.300'
+
 }
 
 // Add the information to the bottom of the file.
 apply plugin: 'com.huawei.agconnect'
+
+// for using FCM instead of HMS comment out if don't use it
+apply plugin: 'com.google.gms.google-services'
