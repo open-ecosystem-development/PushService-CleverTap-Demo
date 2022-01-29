@@ -35,8 +35,8 @@ This app demonstrates integration of CleverTap Push service through Huawei Push 
    - Configure your CleverTap App's for Huawei platform settings [here](https://developer.clevertap.com/docs/clevertap-huawei-push-integration#section-integrate-huawei-hms-sdk). Github Integration Document:[here](https://developer.clevertap.com/docs/clevertap-huawei-push-integration#section-integrate-huawei-hms-sdk)
    - Configuring for Firebase Cloud Messaging
      - On settings gear>Channels>Mobile Push> enable notification channels for Android 8+ and above
-         - add your channel name that you have created in your app using CleverTapAPI.createNotificationChannel function 
-         - one for each channel that created
+         - add your channel name that you have created in your app using * CleverTapAPI.createNotificationChannel * function 
+         - for each channel that created
    - ChangeLog:[here](https://github.com/CleverTap/clevertap-android-sdk/blob/master/docs/CTHUAWEIPUSHCHANGELOG.md)
    
 
@@ -57,9 +57,10 @@ This app demonstrates integration of CleverTap Push service through Huawei Push 
   - Run and test your app on Huawei device and GMS device
     - Go to CleverTap dashboard and create a campaign to test:
       - notification:
-      - In-app: 
+         - choose the channel (that you have created) to send notification message
+      - In-app
     
-  - Your device should receive notification messaging sending from CleverTap dashboard.
+  - Your device should receive notification messaging sending from CleverTap dashboard in the lock screen
   - Your device should receive in-App messaging sending from CleverTap dashboard.
   - You can view the report and manage the campaign through the dashboard.
   - Currently these feature are support:
