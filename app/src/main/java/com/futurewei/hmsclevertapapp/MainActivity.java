@@ -47,11 +47,13 @@ public class MainActivity extends AppCompatActivity {
                 "testing get fcm message from clevertap",
                  NotificationManager.IMPORTANCE_MAX,true);
 
+        // this code is intentionally comment out since as of 1/3/2022 HMS Push notification
+        // is currently not support. Use FCM instead
         // Create HMS notification channel
-       CleverTapAPI.createNotificationChannel(getApplicationContext(),
-                "huawei","huawei",
-                "testing get HMS message from clevertap",
-                NotificationManager.IMPORTANCE_MAX,true);
+        // CleverTapAPI.createNotificationChannel(getApplicationContext(),
+        // "huawei","huawei",
+        // "testing get HMS message from clevertap",
+        // NotificationManager.IMPORTANCE_MAX,true);
 
        CTInstance.pushEvent("FCM-HMS Event");
 
@@ -67,34 +69,37 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Got registered token: " + token, Toast.LENGTH_SHORT).show();
                 });
 
-        sync_getHmsToken();
+//        sync_getHmsToken();
     }
 
-    public void sync_getHmsToken() {
-        new Thread() {
-            @Override
-            public void run() {
-                try {
-                        String appId = new AGConnectOptionsBuilder()
-                                .build(MainActivity.this)
-                                .getString("client/app_id");
-                        String getToken = HmsInstanceId
-                                .getInstance(getApplicationContext())
-                                .getToken(appId, "HCM");
-                        if (getToken == null || getToken.trim().length() < 1) {
-                            getToken = HmsInstanceId
-                                    .getInstance(getApplicationContext())
-                                    .getToken(appId, "HCM");
-                        }
-                        Log.d(TAG, "getToken: " + getToken);
 
-                        Objects.requireNonNull(CleverTapAPI
-                                .getDefaultInstance(getApplicationContext()))
-                                .pushHuaweiRegistrationId(getToken,true);
-                } catch (Exception e) {
-                    Log.i(TAG, "getToken failed due to: " + e.getMessage());
-                }
-            }
-        }.start();
-    }
+//    this code is intentionally comment out since as of 1/3/2022 HMS Push notification
+//    is currently not support. Use FCM instead
+//    public void sync_getHmsToken() {
+//        new Thread() {
+//            @Override
+//            public void run() {
+//                try {
+//                        String appId = new AGConnectOptionsBuilder()
+//                                .build(MainActivity.this)
+//                                .getString("client/app_id");
+//                        String getToken = HmsInstanceId
+//                                .getInstance(getApplicationContext())
+//                                .getToken(appId, "HCM");
+//                        if (getToken == null || getToken.trim().length() < 1) {
+//                            getToken = HmsInstanceId
+//                                    .getInstance(getApplicationContext())
+//                                    .getToken(appId, "HCM");
+//                        }
+//                        Log.d(TAG, "getToken: " + getToken);
+//
+//                        Objects.requireNonNull(CleverTapAPI
+//                                .getDefaultInstance(getApplicationContext()))
+//                                .pushHuaweiRegistrationId(getToken,true);
+//                } catch (Exception e) {
+//                    Log.i(TAG, "getToken failed due to: " + e.getMessage());
+//                }
+//            }
+//        }.start();
+//    }
 }
