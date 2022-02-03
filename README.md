@@ -25,6 +25,7 @@ This app demonstrates integration of CleverTap Push service through Huawei Push 
 **Firebase Cloud Messaging setup**
    - Create firebase account, if you don't have one [from here](https://firebase.google.com/). 
    - Follow their instruction to create project.
+   - Add your app to the project and use the same package name as in App Gallery Connect
    - From project overview page click on the gear icon to go to setting page
    - In the setting page 
       - download the 'google-services.json' file and copy it to your project [root directory](https://developer.huawei.com/consumer/en/doc/development/HMSCore-Guides/android-integrating-sdk-0000001050040084). 
