@@ -48,17 +48,17 @@
 <!--   fill these with data from CleverTap dashboard>setting>Project>projectID-->
         <meta-data
             android:name="CLEVERTAP_ACCOUNT_ID"
-            android:value="TEST-798-R76-6K6Z"/>
+            android:value="xxxx-xxx-xxx-xxxx"/>
 
 <!--   fill these with data from CleverTap dashboard>setting>Project>project token-->
         <meta-data
             android:name="CLEVERTAP_TOKEN"
-            android:value="TEST-6a2-bca"/>
+            android:value="xxxx-xxx-xxx"/>
 
 <!--        for FCM setting-->
         <meta-data
             android:name="FCM_SENDER_ID"
-            android:value="631917320390">
+            android:value="xxxxxxxxxxxx">
         </meta-data>
 
         <service
